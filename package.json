@@ -1,0 +1,42 @@
+{
+  "name": "hexo-minify",
+  "version": "0.1.0",
+  "description": "Optimize your hexo-generated site.",
+  "main": "index.js",
+  "scripts": {
+    "compile": "babel src -d dist",
+    "watch": "babel src -d dist -w",
+    "lint": "eslint src/ && eslint test/ -c .eslintrc.test.json",
+    "prepublish": "npm run lint && npm run compile && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HakurouKen/hexo-minify.git"
+  },
+  "keywords": [
+    "hexo",
+    "minifiy",
+    "optimize"
+  ],
+  "author": "HakurouKen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HakurouKen/hexo-minify/issues"
+  },
+  "homepage": "https://github.com/HakurouKen/hexo-minify#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-register": "^6.18.0",
+    "chai": "^3.5.0",
+    "eslint": "^3.12.2",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "clean-css": "^3.4.23",
+    "html-minifier": "^3.2.3",
+    "uglify-js": "^2.7.5"
+  }
+}
