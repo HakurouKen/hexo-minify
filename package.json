@@ -6,6 +6,7 @@
   "scripts": {
     "compile": "babel src -d dist",
     "watch": "babel src -d dist -w",
+    "test": "npm run compile && mocha --compilers js:babel-register test/cases/",
     "lint": "eslint src/ && eslint test/ -c .eslintrc.test.json",
     "prepublish": "npm run lint && npm run compile && npm test"
   },
