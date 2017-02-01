@@ -66,8 +66,8 @@ function scriptProcessor($, options = {}) {
     });
 }
 
-function htmlProcessor($, options = {}) {
-    return HtmlMinify($.html(),Object.assign({
+function htmlProcessor($) {
+    return HtmlMinify($.html(), {
         collapseBooleanAttributes: true,
         collapseInlineTagWhitespace: true,
         collapseWhitespace: true,
@@ -79,7 +79,7 @@ function htmlProcessor($, options = {}) {
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
         useShortDoctype: true
-    },options || {}));
+    });
 
 }
 
@@ -87,5 +87,5 @@ export default function processor(html, options) {
     let $ = cheerio.load(html);
     styleProcessor($, options.CssMinify || {});
     scriptProcessor($, options.JsMinify || {});
-    return htmlProcessor($, options.HtmlMinify || {})
+    return htmlProcessor($)
 }
