@@ -87,5 +87,5 @@ export default function processor(html, options) {
     let $ = cheerio.load(html);
     styleProcessor($, options.CssMinify || {});
     scriptProcessor($, options.JsMinify || {});
-    return htmlProcessor($)
+    return htmlProcessor($);
 }
